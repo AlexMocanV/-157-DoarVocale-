@@ -1,0 +1,32 @@
+#include <fstream>
+#include <cstring>
+#include <algorithm>
+
+std::string nume="doarvocale";
+std::ifstream fin(nume+".in");
+std::ofstream fout(nume+".out");
+
+int cu,bune=0;
+int main()
+{
+    fin>>cu;
+    for(int i=0;i<cu;i++)
+    {
+        bool ok=true;
+        std::string c;
+        fin>>c;
+        for(int i=0;i<c.length();i++)
+        {
+            if(c[i]!='a'&&c[i]!='o'&&c[i]!='u'&&c[i]!='e'&&c[i]!='i')
+            {
+                ok=false;
+                break;
+            }
+        }
+        if(ok)
+        bune++;
+    }
+    fout<<bune;
+    return 0;
+}
+//if(c[i]=='a'||c[i]=='o'||c[i]=='u'||c[i]=='e'||c[i]=='i'||c[i]=='A'||c[i]=='O'||c[i]=='U'||c[i]=='E'||c[i]=='I')
